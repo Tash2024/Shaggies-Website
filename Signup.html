@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Signup</title>
+    <!--Connected HTML file to CSS with this line of code.-->
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="form-box">
+            <!--Come to form-box and create one div & class name button-box.-->
+            <div class="button-box">
+            </div>
+            <h1 class="title">User</h1>
+            <div class="social-icons">
+                <img src="img/twitter.jpg" alt=" ">
+                <img src="img/facebook.jpg" alt=" ">
+                <img src="img/google.jpg" alt=" ">
+            </div>
+            <form id="signup" class="input-group">
+                <input type="text" class="input-field" placeholder="Username" required>
+                <input type="email" class="input-field" placeholder="Email" required>
+                <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
+                <button type="submit" class="submit-btn">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    <script>
+
+
+        function redirectToWelcomePage(event) {
+            event.preventDefault();
+
+            var username = document.querySelector('.input-field[placeholder="Username"').value;
+            var email = document.querySelector('.input-field[placeholder="Email"').value;
+            var agree = document.querySelector('.check-box').checked;
+
+            if (username && email && agree) {
+                window.location.href = "Welcome.html";
+            } else {
+                if (!username || !email) {
+                    alert("Please ensure that all fields are filled in.");
+                }
+                if (!agree) {
+                    alert("Please agree to the terms & conditions.")
+                }
+            }
+        }
+
+        document.querySelector('.submit-btn').addEventListener("click", redirectToWelcomePage);
+        </script>
+</body>
+</html>

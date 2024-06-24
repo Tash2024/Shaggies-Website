@@ -1,0 +1,116 @@
+﻿/*Poppins font options*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(img/Background1.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 25px;
+}
+
+.container form {
+    width: 500px;
+    padding: 5px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.input-box select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 14px;
+    height: 40px;
+    cursor: pointer;
+    -webkit-appearance: menulist; /*Safari*/
+}
+
+.row .column {
+    flex: 0 1 calc(50% - 10px);
+}
+
+.column .title {
+    font-size: 30px;
+    color: black;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.column .input-box {
+    margin: 5px 0;
+}
+
+.input-box span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#save {
+    width: 100%;
+    padding: 12px;
+    background: hsl(321, 100%, 80%);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    margin-top: 5px;
+    transition: .5s;
+}
+
+#save:hover {
+    background: #b30059;
+}
+
+.input-box button {
+    background-color: hsl(321, 100%, 80%);
+    color: white;
+    padding: 5px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.input-box button:hover {
+    background: #b30059;
+}
+
+
+.input-box button.selected {
+    background-color: #b30059;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+p {
+    color: #b30059;
+}

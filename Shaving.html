@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0" />
+    <title>Shaving</title>
+    <link rel="stylesheet" href="shaving.css">
+    </head>
+<body>
+    <div class="container">
+        <form action="">
+            <div class="row">
+                <div class="column">
+                    <h1 class="title">Shaving</h1>
+                    <!--Have counter in p tag-->
+                    <p id="countdown">02:00</p>
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Name of Dog">
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Breed">
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Color">
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Age">
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Gender">
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Microchip Number">
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Preferred Foods">
+                    </div>
+                    <div class="input-box">
+                        <span>Is this your first time visiting Shaggies?</span>
+                        <select name="" id="">
+                            <option>Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <span>Staff Member (Do not select if it's first time visiting)</span>
+                        <select name="" id="">
+                            <option>Select</option>
+                            <option value="Chichi Tshimpaka">Chichi Tshimpaka</option>
+                            <option value="Jenovic Badibanga">Jenovic Badibanga</option>
+                            <option value="Billy Bimansha">Billy Bimansha</option>
+                            <option value="Ofentse Matebesi">Ofentse Matebesi</option>
+                            <option value="Nanette Chikombero">Nanette Chikombero</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <span>Date</span>
+                        <input type="date">
+                    </div>
+                    <div class="input-box">
+                        <span>Time</span>
+                        <button type="button" class="time-btn" value="">08:00</button>
+                        <button type="button" class="time-btn" value="">09:15</button>
+                        <button type="button" class="time-btn" value="">10:30</button>
+                        <button type="button" class="time-btn" value="">11:45</button>
+                        <button type="button" class="time-btn" value="">13:00</button>
+                        <button type="button" class="time-btn" value="">14:15</button>
+                        <button type="button" class="time-btn" value="">15:30</button>
+                    </div>
+                    <textarea name="message" rows="5" cols="500" placeholder="Leave a message"></textarea>
+                </div>
+                </div>
+            <button type="button" id="save" onclick="confirmAppointment()">Submit</button>
+            </form>
+        </div>
+    <script type="text/javascript">
+
+        function confirmAppointment() {
+            alert('Appointment confirmed! Thank you for scheduling with us. Looking forward to seeing you.');
+            window.location.href = "Teammates.html";
+        }
+
+        //Variables
+        const startingMinutes = 2;
+        let time = startingMinutes * 60;
+
+        //Target countdown component
+        const countdownEl = document.getElementById('countdown');
+
+        //Call updateCountdown function every second
+        const intervalId = setInterval(updateCountdown, 1000);
+
+        //Function which will run every second so we'll update counter
+        function updateCountdown() {
+            //Calculate minutes and seconds remaining
+            //Take all the seconds and divide by 60 to get the minutes
+            //Using Math.floor to retrieve lowest number without decimals
+            const minutes = Math.floor(time / 60);
+            let seconds = time % 60;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            countdownEl.innerHTML = `${minutes}:${seconds}`;
+
+            //Decrease time
+            time--;
+
+            if (time < 0) {
+                clearInterval(intervalId);
+                countdownEl.innerHTML = 'Session timed out. Redirecting to Service page in 5 secs.';
+                setTimeout(() => {
+                window.location.href = 'Service.html';
+            }, 5000);
+        }
+        }
+
+        document.querySelectorAll('.time-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                document.querySelectorAll('.time-btn').forEach(btn => btn.classList.remove('selected'));
+                this.classList.add('selected');
+                const selectedTime = this.value;
+                console.log("Selected time:", selectedTime);
+            });
+        });
+         </script>
+</body>
+</html>

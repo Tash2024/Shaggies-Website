@@ -1,0 +1,154 @@
+﻿/*Poppins font options*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+header {
+    padding: 20px 0;
+    text-align: right;
+    background-color: hsl(321, 100%, 80%);
+    font-family: sans-serif;
+}
+
+nav .logo {
+    margin-left: 14px;
+    font-family: 'Poppins';
+    margin-top: 5px;
+    font-weight: 250;
+    position: absolute;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: lightgrey;
+}
+
+h1 {
+    font-family: 'Poppins';
+    color: black;
+    font-size: 30px;
+    padding: 15px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.line {
+    width: 98%;
+    margin: auto;
+    border: none;
+    border-top: 1px solid #000000;
+}
+
+header .user {
+    margin-right: 9px;
+    position: relative;
+    cursor: pointer;
+}
+
+.container {
+    width: 600px;
+    max-width: 60vw;
+    margin: auto;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.order-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+}
+
+.order {
+    border: 1px solid grey;
+    background-color: white;
+    border-radius: 5px;
+    width: 250px;
+    height: 440px;
+    padding: 20px;
+    overflow: hidden;
+    flex-direction: column;
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    text-align: left;
+}
+
+select {
+    width: 100%;
+    padding: 15px 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    background-color: lightgrey;
+    cursor: pointer;
+    -webkit-appearance: menulist; /*Safari*/
+}
+
+.update {
+    color: white;
+    background-color: orange;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+.delete {
+    color: white;
+    background-color: red;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+/*For desktop screen*/
+@media screen and (max-width: 1200px) {
+    .order-container {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/*For mobile screen*/
+@media screen and (max-width: 768px) {
+    .order-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*For tablet screen*/
+@media screen and (max-width: 992px) {
+    .order-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

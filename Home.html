@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="home.css">
+    </head>
+<body>
+    <header>
+            <div class="btn">
+                <button class="signup">Sign Up</button>
+                <button class="login">Login</button>
+            </div>
+    </header>
+    <div class="container">
+        <div class="content"></div>
+    </div>
+    <div class="image-left">
+        <img class="img-trim" src="img/trim.jpg" alt=" ">
+        <div class="text-over-image trim-text">
+            <h1>Shaggies</h1>
+        </div>
+    </div>
+    <div class="image-right">
+        <img class="img-bath" src="img/bath.jpg" alt=" ">
+        <div class="text-over-image bath-text">
+            <h2>Quality Dog Care</h2>
+            <p>Serving your Dog with Style</p>
+        </div>
+    </div>
+
+    <div id="cookie-banner" class="cookie-banner">
+        <p>We use cookies to make sure that you have the best possible experience while visiting our website. <button id="accept-cookies">Accept Cookies</button></p>
+    </div>
+    <script>
+
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function checkCookie() {
+            const userAccepted = getCookie("userAccepted");
+            if (userAccepted) {
+                document.getElementById('cookie-banner').style.display = 'none';
+            } else {
+                document.getElementById('cookie-banner').style.display = 'block';
+            }
+        }
+
+        document.getElementById('accept-cookies').addEventListener('click', function () {
+            setCookie("userAccepted", "true", 30);
+            document.getElementById('cookie-banner').style.display = 'none';
+        });
+
+        window.onload = function () {
+            checkCookie();
+        };
+
+        function redirectToSignupPage() {
+            window.location.href = "Signup.html";
+        }
+
+        let signup = document.querySelector('.signup').addEventListener("click", redirectToSignupPage);
+
+        function redirectToLoginPage() {
+            window.location.href = "Login.html";
+        }
+
+        let login = document.querySelector('.login').addEventListener("click", redirectToLoginPage);
+        </script>
+</body>
+</html>

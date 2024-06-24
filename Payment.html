@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Payment</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <form action="">
+            <div class="row">
+                <div class="column">
+                    <h3 class="title">Billing Address</h3>
+                    <div class="input-box">
+                        <span>Full Name:</span>
+                        <input type="text"
+                               placeholder="Natasha Chikombero">
+                    </div>
+                    <div class="input-box">
+                        <span>Email:</span>
+                        <input type="email"
+                               placeholder="example@example.com">
+                    </div>
+                    <div class="input-box">
+                        <span>Address:</span>
+                        <input type="text"
+                               placeholder="Apartment - Complex/estate name">
+                    </div>
+                    <div class="input-box">
+                        <span>City:</span>
+                        <select name="" id="">
+                            <option value="">Choose..</option>
+                            <option value="pretoria">Pretoria</option>
+                            <option value="johannesburg">Johannesburg</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <span>Zip Code:</span>
+                        <input type="number"
+                               placeholder="2194">
+                    </div>
+                    <div class="input-box">
+                        <span>Phone Number:</span>
+                        <input type="number"
+                               placeholder="+27">
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <h3 class="title">Payment</h3>
+                <div class="input-box">
+                    <span>Cards Accepted:</span>
+                    <img src="img/cards.jpg" alt=" ">
+                </div>
+                <div class="input-box">
+                    <span>Name on Card:</span>
+                    <input type="text"
+                           placeholder="Mrs Natasha Molaba">
+                </div>
+                <div class="input-box">
+                    <span>Credit Card Number:</span>
+                    <input type="number"
+                           placeholder="1111 2222 3333 4444">
+                </div>
+                <div class="input-box">
+                    <span>Exp. Month:</span>
+                    <input type="text"
+                           placeholder="July">
+                </div>
+                <div class="flex">
+                    <div class="input-box">
+                        <span>Exp. Year:</span>
+                        <input type="number"
+                               placeholder="2025">
+                    </div>
+                    <div class="input-box">
+                        <span>CVV:</span>
+                        <input type="number"
+                               placeholder="123">
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <h3 class="title">Shipping Method</h3>
+                <div class="input-box">
+                    <span>Shipping Method:</span>
+                    <select name="shipping-method" id="shipping-method" onchange="updateCharge()">
+                        <option value="">Select</option>
+                        <option value="same-day">Same-Day Delivery (Available in Select Areas)</option>
+                        <option value="in-store">In-Store Pickup (Pick up Order)</option>
+                        <option value="standard-shipping">Standard Shipping (3-7 Business Days)</option>
+                        <option value="expedited-shipping">Expedited Shipping (2-3 Business Days)</option>
+                        <option value="overnight-shipping">Overnight Shipping (Next Business Day)</option>
+                        <option value="two-day">Two-Day Shipping (2 Business Days)</option>
+                    </select>
+                </div>
+                <div class="charge-box">
+                    <span id="charge-message"></span>
+                </div>
+            </div>
+            <!--Have counter in p tag-->
+            <p id="countdown">02:00</p>
+            <button type="submit" id="submit" class="btn" onclick="confirmPayment(event)">Submit</button>
+        </form>
+    </div>
+  
+    <script type="text/javascript">
+        
+        function confirmPayment(event) {
+            event.preventDefault();
+            alert('Payment successfully processed! Thank you for shopping with us.');
+            window.location.href = "Service.html";
+        }
+        
+        //Variables
+        const startingMinutes = 2;
+        let time = startingMinutes * 60;
+        
+        //Target countdown component
+        const countdownEl = document.getElementById('countdown');
+        
+        //Call updateCountdown function every second
+        const intervalId = setInterval(updateCountdown, 1000);
+        
+        //Function which will run every second so we'll update counter
+        function updateCountdown() {
+            //Calculate minutes and seconds remaining
+            //Take all the seconds and divide by 60 to get the minutes
+            //Using Math.floor to retrieve lowest number without decimals
+            const minutes = Math.floor(time / 60);
+            let seconds = time % 60;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            countdownEl.innerHTML = `${minutes}: ${seconds}`
+            
+            //Decrease time
+            time--;
+
+            if (time < 0) {
+            clearInterval(intervalId);
+            countdownEl.innerHTML = 'Session timed out. Redirecting to Shop page in 5 secs.';
+            setTimeout(() => {
+            window.location.href = 'Shop.html';
+            }, 5000);
+            }
+            }
+
+        function updateCharge() {
+            const chargeMessage = document.getElementById("charge-message");
+            const shippingMethod = document.getElementById("shipping-method").value;
+
+            let charge = "";
+
+            switch (shippingMethod) {
+                case "same-day":
+                    charge = "Extra charge: R100.00";
+                    break;
+                case "in-store":
+                    charge = "No Extra Charge";
+                    break;
+                case "standard-shipping":
+                    charge = "Extra charge: R40.00";
+                    break;
+                case "expedited-shipping":
+                    charge = "Extra charge: R80.00";
+                    break;
+                case "overnight-shipping":
+                    charge = "Extra charge: R120.00";
+                    break;
+                case "two-day":
+                    charge = "Extra charge: R60.00";
+                    break;
+                default:
+                    charge = "";
+            }
+
+            chargeMessage.textContent = charge;
+        }
+    </script>
+</body>
+</html>

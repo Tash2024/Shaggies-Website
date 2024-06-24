@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Orders</title>
+    <link rel="stylesheet" href="orders.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="icon">
+                <h2 class="logo">AdminPanel</h2>
+            </div>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Products.html">Products</a></li>
+                <li><a href="#">Orders</a></li>
+                <li><a href="Accounts.html">Accounts</a></li>
+                <li><a href="Appointments.html">Appointments</a></li>
+                <li><a href="Messages.html">Messages</a></li>
+                <li><a href="Reviews.html">Reviews</a></li>
+            </ul>
+            <!--Class user to contain user icon.-->
+            <div class="user">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z" clip-rule="evenodd" />
+                </svg>
+            </div>
+            <hr class="line">
+        </nav>
+    </header>
+    <div class="wrapper">
+        <!--Container class to contain all website content.-->
+        <div class="container">
+            <h1>Placed Orders</h1>
+            <div class="order-container">
+                <div class="order">
+                    <div class="label">User ID: 10</div>
+                    <div class="name">Name: Natasha Molaba</div>
+                    <div class="phone-number">Phone Number: 073 888 8382</div>
+                    <div class="email">Email: natashamolaba@gmail.com</div>
+                    <div class="address">Address: 325 Castle Street</div>
+                    <div class="total-products">Total Products: Waterless Dog Shampoo (1)</div>
+                    <div class="total-price">Total Price: R220/-</div>
+                    <div class="payment-method">Payment Method: American Express</div>
+                    <div class="payment-status">Payment Status:</div>
+                    <select name="" id="">
+                        <option value="completed">Completed</option>
+                        <option value="authorized">Authorized</option>
+                        <option value="refunded">Refunded</option>
+                        <option value="cancelled">Cancelled</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="on-hold">On Hold</option>
+                        <option value="partially-paid">Partially Paid</option>
+                        <option value="captured">Captured</option>
+                        <option value="under-review">Under review</option>
+                    </select>
+                    <div class="shipping-method">Shipping Method: Same-Day Delivery</div>
+                    <div class="shipping-status">Shipping Status:</div>
+                    <select name="" id="">
+                        <option value="pending">Pending</option>
+                        <option value="processing">Processing</option>
+                        <option value="confirmed">Confirmed</option>
+                        <option value="paid">Paid</option>
+                        <option value="packed">Packed</option>
+                        <option value="shipped">Shipped</option>
+                        <option value="in-transit">In Transit</option>
+                        <option value="out-for-delivery">Out for Delivery</option>
+                        <option value="delivered">Delivered</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                    <button class="button update">Update</button>
+                    <button class="button delete">Delete</button>
+                </div>
+                <div class="order">
+                    <div class="label">User ID: 11</div>
+                    <div class="name">Name: Boitumelo Morake</div>
+                    <div class="phoneNumber">Phone Number: 062 552 0652</div>
+                    <div class="email">Email: boitumelomorake@gmail.com</div>
+                    <div class="address">Address: 6 Dulwich Rd</div>
+                    <div class="total-products">Total Products: Ancol Red Uni Dog Jersey (1), Cotton Dog Soccer Jersey Vest (1)</div>
+                    <div class="total-price">Total Price: R560/-</div>
+                    <div class="payment-method">Payment Method: Mastercard</div>
+                    <div class="payment-status">Payment Status:</div>
+                    <select name="" id="">
+                        <option value="completed">Completed</option>
+                        <option value="authorized">Authorized</option>
+                        <option value="refunded">Refunded</option>
+                        <option value="cancelled">Cancelled</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="on-hold">On Hold</option>
+                        <option value="partially-paid">Partially Paid</option>
+                        <option value="captured">Captured</option>
+                        <option value="under-review">Under review</option>
+                    </select>
+                    <div class="shipping-method">Shipping Method: Standard Shipping</div>
+                    <div class="shipping-status">Shipping Status:</div>
+                    <select name="" id="">
+                        <option value="pending">Pending</option>
+                        <option value="processing">Processing</option>
+                        <option value="confirmed">Confirmed</option>
+                        <option value="paid">Paid</option>
+                        <option value="packed">Packed</option>
+                        <option value="shipped">Shipped</option>
+                        <option value="in-transit">In Transit</option>
+                        <option value="out-for-delivery">Out for Delivery</option>
+                        <option value="delivered">Delivered</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                    <button class="button update">Update</button>
+                    <button class="button delete">Delete</button>
+                </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

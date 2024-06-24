@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "productName": "Dog Rope Toy",
+        "productDescription": "Provides hours of entertainment and promotes dental health",
+        "productPrice": 260,
+        "image": "img/rope.jpg"
+    },
+    {
+        "id": 2,
+        "productName": "Chewy Dog Toy",
+        "productDescription": "Satifies your dog's natural instincts",
+        "productPrice": 240,
+        "image": "img/chewy.jpg"
+    },
+    {
+        "id": 3,
+        "productName": "Stuffed Dog Toy",
+        "productDescription": "Perfect for playtime, cuddling and comfort",
+        "productPrice": 250,
+        "image": "img/stuffed.jpg"
+    },
+    {
+        "id": 4,
+        "productName": "Banana and Carrot Dog Treats",
+        "productDescription": "Healthy, delicious and packed with vitamins",
+        "productPrice": 70,
+        "image": "img/treat1.jpg"
+    },
+    {
+        "id": 5,
+        "productName": "Peanut Butter Pumpkin Dog Treats",
+        "productDescription": "Irressistable, delectable and nutritious",
+        "productPrice": 60,
+        "image": "img/treat2.jpg"
+    },
+    {
+        "id": 6,
+        "productName": "Bacon Cheddar Dog Treats",
+        "productDescription": "Savory and provides a tasty reward for good behavior",
+        "productPrice": 100,
+        "image": "img/treat3.jpg"
+    },
+    {
+        "id": 7,
+        "productName": "All Natural Dog Shampoo",
+        "productDescription": "Gentle, nourishing and promotes soft fur",
+        "productPrice": 110,
+        "image": "img/shampoo1.jpg"
+    },
+    {
+        "id": 8,
+        "productName": "Waterless Dog Shampoo",
+        "productDescription": "Cleanses and freshens coat without the need of water",
+        "productPrice": 220,
+        "image": "img/shampoo2.jpg"
+    },
+    {
+        "id": 9,
+        "productName": "Razzle Dazzle Dog Shampoo",
+        "productDescription": "Vibrant, aromatic, leaves coat clean and smelling delightful",
+        "productPrice": 250,
+        "image": "img/shampoo3.jpg"
+    },
+    {
+        "id": 10,
+        "productName": "Cotton Dog Soccer Jersey",
+        "productDescription": "Stylish, breathable fabric and fashionable",
+        "productPrice": 280,
+        "image": "img/jersey1.jpg"
+    },
+    {
+        "id": 11,
+        "productName": "Cotton Dog Soccer Jersey Vest",
+        "productDescription": "Stylish, lightweight and comfortable",
+        "productPrice": 270,
+        "image": "img/jersey2.jpg"
+    },
+    {
+        "id": 12,
+        "productName": "Ancol Red Uni Dog Jersey",
+        "productDescription": "Fashionable, warm and stylish",
+        "productPrice": 290,
+        "image": "img/jersey3.jpg"
+    }
+]
